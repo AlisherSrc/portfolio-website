@@ -1,9 +1,11 @@
 import React from "react";
+import Navbar from '../../components/navbar/Navbar' 
+
 
 const HeroSection = () => {
     return (
         <section>
-            Hero section
+            <Navbar />
         </section>
     )
 }
