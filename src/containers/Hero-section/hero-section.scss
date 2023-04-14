@@ -1,0 +1,30 @@
+.hero{
+    width: 100%;
+    height: 50vh;
+}
+
+.hero-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+
+    font-weight: 500;
+
+    width: 100%;
+    height: 30vh;
+
+    h1{
+        font-size: 3em;
+        font-weight: 500;
+    }
+
+    h2{
+        font-size: 2em;
+        font-weight: 500;
+    }
+
+    hr{
+        width: 25%;
+    }
+}
