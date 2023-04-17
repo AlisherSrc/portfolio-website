@@ -9,9 +9,10 @@ $links-color: #FF847C;
 
 $font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 $navbar-font-family: "Karla", Arial, sans-serif;
+
 // function variables
 
-@mixin gradient($color_1,$color_2){
+@mixin gradient_center($color_1,$color_2){
 
     /* ff 3.6+ */
     background:-moz-radial-gradient(circle at 50% 50%, $color_1 0%, $color_2 100%);
@@ -29,3 +30,4 @@ $navbar-font-family: "Karla", Arial, sans-serif;
     background:radial-gradient(circle at 50% 50%, $color_1 0%, $color_2 100%);
 
 }
+

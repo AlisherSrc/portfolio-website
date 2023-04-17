@@ -1,72 +1,14 @@
-@import '../../styles/sass/variables.scss';
+@import "../../styles/sass/variables.scss";
 
-.scroller-section{
-    
-    
-    height: 100vh;
+.scroller-section {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
 
-    position: relative;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    // overflow: hidden;
+  h2 {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-    .slides{
-        position: relative;
-        overflow: hidden;
-        display: flex;
-
-        margin: auto;
-    
-        #slide-2{
-            @include gradient(rgb(15, 25, 112),$black);
-        }
-
-        #slide-3{
-            @include gradient(rgb(94, 15, 112),$black);
-        }
-    }
-
-    .scroller-section__btns{
-        width: 100vw;
-        height: 10vh;
-
-
-        .scroller-section__btn{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 30px;
-
-            padding: 10px;
-
-            position: absolute; 
-            top:50%;
-            cursor: pointer; 
-
-            z-index: 20;
-        }
-
-        .scroller-section__btn img{
-            z-index: 10;
-        }
-
-        .scroller-section__btn:hover{
-            background-color: $grey;
-            z-index: 0;
-        }
-
-        .scroller-section__btn_prev{
-            left: 0px;
-        }
-
-        .scroller-section__btn_next{
-            right:0px;
-        }
-
-    }
 }
-
-
