@@ -8,9 +8,9 @@ const Navbar = () => {
             <div className="navbar-icon">
                 <a>AlisherSk</a>
             </div>
-            <div className="navbar-burger__menu">
+            {/* <div className="navbar-burger__menu">
                 <img src={burger_menu}  alt='menu'/>
-            </div>
+            </div> */}
         </div>
     )
 }
