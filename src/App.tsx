@@ -1,5 +1,5 @@
 import './App.css'
-import {Hero,Scroller,Works,Contact,Footer} from './containers'
+import {Hero,Scroller,Works,Footer} from './containers'
 
 function App() {
 
@@ -9,7 +9,6 @@ function App() {
       <Hero />
       <Scroller />
       <Works />
-      <Contact />
       <Footer />
     </div>
   )
