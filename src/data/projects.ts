@@ -1,10 +1,13 @@
-import { Project } from "../modules/project";
+import { ProjectProps } from "../components/project/Project";
+import printerestImage from "./../assets/printerest.png";
 
-const projects : Project[] = [
+const projects : ProjectProps[] = [
     {
         id: 1,
         title: "Printerest",
         subtitle: "Pinterest Clone with Angular and Django",
+        images: [printerestImage],
+        type:"Group project"
     }
 ]
 
