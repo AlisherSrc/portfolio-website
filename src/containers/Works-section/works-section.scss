@@ -1,28 +1,110 @@
-section.works-section{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20%;
+:root{
+    --box-color: rgb(23,23,23);
+}
 
-    width: 100%;
-    height: 850px;
-    background-color: black;
-    color: rgb(250, 255, 255);
+section.works-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  width: 100%;
+  height: 850px;
+  background-color: black;
+  color: rgb(250, 255, 255);
+
+  .column {
+    flex: 1;
+  }
+
+  .column-first {
+    margin-left: 5%;
+
+    .works-list ul {
+      list-style: none;
+
+      .works-list__item__container {
+        border: rgb(103, 103, 103) solid 1px;
+        // padding: 10px;
+        width: 70%;
+      }
+    }
+  }
+
+  .column-second {
+    margin-right: 5%;
+
+    .project-cards {
+      position: relative;
+    }
+  }
 }
 
 
-.project-card{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-flow: column;
-}
-
-.works-list ul{
-    list-style: none;
-}
 
 
-.project-cards{
+.box {
+    background-color: rgba(255, 255, 255, 0.1);
     position: relative;
+    border-radius: 10px;
+
+    .box-content{
+        position: relative;
+        background-color: var(--box-color);
+        border-radius: inherit;
+        padding: 10px 0px;
+        
+        margin: 1px;
+        
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+    }
+    
+}
+
+.box::before,
+.box::after{
+    position: absolute;
+
+    opacity: 0;
+    transition: opacity 500ms;
+
+    border-radius: inherit;
+    content: "";
+
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+
+    top:0px;
+
+    padding: 1px;
+}
+
+.box::before{
+    background: radial-gradient(
+        800px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255,255,255,0.06),
+        transparent 40%
+    );
+    z-index: 3;
+}
+
+.box::after{
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255,255,255,0.4),
+        transparent 40%
+    );
+    z-index: 1;
+}
+
+.works-section:hover .box::after{
+    opacity: 1;
+}
+
+.box:hover::before{
+    opacity: 1;
 }
