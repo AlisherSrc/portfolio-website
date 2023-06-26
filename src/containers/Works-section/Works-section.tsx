@@ -8,7 +8,6 @@ import Project from "../../components/project/Project";
 
 const WorksSection = () => {
     const [workNum, setWorkNum] = useState(0);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
     const setWorkNumValidate = (id: number) => {
         const maxIndex = projects.length - 1;
@@ -20,28 +19,31 @@ const WorksSection = () => {
     const handleMouseMovement = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         const target = e.currentTarget as HTMLElement;
         const boxElements = target.querySelectorAll(".box");
+        // ISSUE: It changes only the element I hover upon and don't change other elements. So if I 
+        // don't hover upon any element it will not change any of them
+        const boxElement = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement;
 
-        if (boxElements.length > 0) {
-            const rect = boxElements[0].getBoundingClientRect(),
+        if (boxElement && boxElement.classList.contains("box")) {
+            const rect = boxElement.getBoundingClientRect(),
                 x = e.clientX - rect.left,
                 y = e.clientY - rect.top;
-            setMousePosition({x:x,y:y});
 
+            boxElement.style.setProperty("--mouse-x", `${x}px`);
+            boxElement.style.setProperty("--mouse-y", `${y}px`);
+        }
+        else if (boxElements.length > 0) {
+
+            boxElements.forEach((element) => {
+                const rect = element.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+
+                    (element as HTMLElement).style.setProperty("--mouse-x", `${x}px`);
+                    (element as HTMLElement).style.setProperty("--mouse-y", `${y}px`);
+
+            })
         }
     }
-
-
-    // Styles
-
-    interface boxCSSProperties extends CSSProperties{
-        "--mouse-x": string,
-        "--mouse-y": string
-    } 
-
-    const boxProperties: boxCSSProperties = {
-        "--mouse-x":`${mousePosition.x}px`,
-        "--mouse-y":`${mousePosition.y}px`
-    };
 
     return (
         <section className="works-section" onMouseMove={handleMouseMovement}>
@@ -51,7 +53,7 @@ const WorksSection = () => {
                         {projects.map((project) => (
                             <li key={project.id} onClick={() => setWorkNumValidate(project.id)}>
                                 <div className="works-list__item__container box"
-                                style={boxProperties}>
+                                >
                                     <div className="box-content">
                                         {project.title}
                                     </div>
@@ -65,7 +67,7 @@ const WorksSection = () => {
             <div className="column column-second">
 
                 <div className="project-cards box"
-                style={boxProperties}>
+                >
                     <div className="box-content">
                         <Project
                             id={projects[workNum].id}

@@ -12,41 +12,6 @@
   
   position: relative;
 
-  // /* ff 3.6+ */
-  // background: -moz-radial-gradient(
-  //   circle at 50% 50%,
-  //   rgba(121, 121, 121, 1) 0%,
-  //   rgba(12, 12, 12, 1) 100%
-  // );
-
-  // /* safari 5.1+,chrome 10+ */
-  // background: -webkit-radial-gradient(
-  //   circle at 50% 50%,
-  //   rgba(121, 121, 121, 1) 0%,
-  //   rgba(12, 12, 12, 1) 100%
-  // );
-
-  // /* opera 11.10+ */
-  // background: -o-radial-gradient(
-  //   circle at 50% 50%,
-  //   rgba(121, 121, 121, 1) 0%,
-  //   rgba(12, 12, 12, 1) 100%
-  // );
-
-  // /* ie 10+ */
-  // background: -ms-radial-gradient(
-  //   circle at 50% 50%,
-  //   rgba(121, 121, 121, 1) 0%,
-  //   rgba(12, 12, 12, 1) 100%
-  // );
-
-  // /* global 92%+ browsers support */
-  // background: radial-gradient(
-  //   circle at 50% 50%,
-  //   rgba(121, 121, 121, 1) 0%,
-  //   rgba(12, 12, 12, 1) 100%
-  // );
-
   .project__title {
     font-size: 2rem;
     font-weight: 700;
@@ -70,9 +35,6 @@
   }
 
   .project__content {
-    
-
-
     margin-top: 20px;
     width: 90%;
   }

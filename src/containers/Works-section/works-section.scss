@@ -1,5 +1,5 @@
-:root{
-    --box-color: rgb(23,23,23);
+:root {
+  --box-color: rgb(23, 23, 23);
 }
 
 section.works-section {
@@ -40,71 +40,71 @@ section.works-section {
   }
 }
 
-
-
-
 .box {
-    background-color: rgba(255, 255, 255, 0.1);
-    position: relative;
-    border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: relative;
+  border-radius: 10px;
 
-    .box-content{
-        position: relative;
-        background-color: var(--box-color);
-        border-radius: inherit;
-        padding: 10px 0px;
-        
-        margin: 1px;
-        
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-    }
+  .box-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
-}
-
-.box::before,
-.box::after{
-    position: absolute;
-
-    opacity: 0;
-    transition: opacity 500ms;
-
+    position: relative;
+    background-color: var(--box-color);
     border-radius: inherit;
-    content: "";
+    padding: 10px 0px;
+
+    margin: 1px;
 
     height: 100%;
     width: 100%;
-    left: 0px;
-    right: 0px;
-
-    top:0px;
-
-    padding: 1px;
+    z-index: 2;
+  }
 }
 
-.box::before{
-    background: radial-gradient(
-        800px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255,255,255,0.06),
-        transparent 40%
-    );
-    z-index: 3;
+.box::before,
+.box::after {
+  position: absolute;
+
+  opacity: 0;
+  transition: opacity 500ms;
+
+  border-radius: inherit;
+  content: "";
+
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  right: 0px;
+
+  top: 0px;
+
+  padding: 1px;
 }
 
-.box::after{
-    background: radial-gradient(
-        600px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255,255,255,0.4),
-        transparent 40%
-    );
-    z-index: 1;
+.box::before {
+  background: radial-gradient(
+    800px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.06),
+    transparent 40%
+  );
+  z-index: 3;
 }
 
-.works-section:hover .box::after{
-    opacity: 1;
+.box::after {
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(255, 255, 255, 0.4),
+    transparent 40%
+  );
+  z-index: 1;
 }
 
-.box:hover::before{
-    opacity: 1;
+.works-section:hover .box::after {
+  opacity: 1;
+}
+
+.box:hover::before {
+  opacity: 1;
 }
