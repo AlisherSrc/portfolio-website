@@ -9,11 +9,10 @@ export interface ProjectProps {
     subtitle?: string,
     description?: string,
     images?: string[],
-    imagesNum?: number,
     type?:string
 }
 
-const Project: React.FC<ProjectProps> = ({ id, title, subtitle, description, images, imagesNum,type }) => {
+const Project: React.FC<ProjectProps> = ({ id, title, subtitle, description, images,type }) => {
     return (
         <div className="project__container">
 

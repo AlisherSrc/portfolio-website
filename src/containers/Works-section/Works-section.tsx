@@ -44,7 +44,8 @@ const WorksSection = () => {
             })
         }
     }
-
+// TO DO: Connect with Firebase in order to fetch projects from it, so I can easily add and edit my projects without modifing my code
+// https://www.youtube.com/watch?v=jCY6DH8F4oc
     return (
         <section className="works-section" onMouseMove={handleMouseMovement}>
             <div className="column column-first">
