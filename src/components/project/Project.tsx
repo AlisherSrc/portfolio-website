@@ -4,7 +4,7 @@ import './project.scss';
 import right_arrow from './../../assets/right-arrow.svg';
 
 export interface ProjectProps {
-    id: number,
+    id: string,
     title: string,
     subtitle?: string,
     description?: string,

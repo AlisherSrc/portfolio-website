@@ -1,20 +1,20 @@
-import React, { CSSProperties, useState } from "react";
+import React, { CSSProperties, useEffect, useState } from "react";
 import './works-section.scss'
-import projects from "../../data/projects";
-import Project from "../../components/project/Project";
-
+// import projects from "../../data/projects";
+import Project, { ProjectProps } from "../../components/project/Project";
+import useFirestore from "../../hooks/useFirestore";
+// import projects from "../../data/projects";
 
 
 
 const WorksSection = () => {
     const [workNum, setWorkNum] = useState(0);
+    const {collectionList: projects, loading} = useFirestore<ProjectProps>("projects");
 
     const setWorkNumValidate = (id: number) => {
         const maxIndex = projects.length - 1;
         (id <= maxIndex && id >= 0) && setWorkNum(id)
     }
-
-
 
     const handleMouseMovement = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         const target = e.currentTarget as HTMLElement;
@@ -47,12 +47,13 @@ const WorksSection = () => {
 // TO DO: Connect with Firebase in order to fetch projects from it, so I can easily add and edit my projects without modifing my code
 // https://www.youtube.com/watch?v=jCY6DH8F4oc
     return (
+        (!loading) ?
         <section className="works-section" onMouseMove={handleMouseMovement}>
             <div className="column column-first">
                 <div className="works-list">
                     <ul>
                         {projects.map((project) => (
-                            <li key={project.id} onClick={() => setWorkNumValidate(project.id)}>
+                            <li key={project.id}>
                                 <div className="works-list__item__container box"
                                 >
                                     <div className="box-content">
@@ -80,6 +81,10 @@ const WorksSection = () => {
 
             </div>
 
+        </section>
+        :
+        <section>
+            <p>Loading...</p>
         </section>
     )
 }
