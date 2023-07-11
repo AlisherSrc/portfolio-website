@@ -13,8 +13,9 @@ export interface ProjectProps {
 }
 
 const Project: React.FC<ProjectProps> = ({ id, title, subtitle, description, images,type }) => {
+    // TO DO: Fill it with the semantic HTML
     return (
-        <div className="project__container">
+        <article className="project__container">
 
             <img className="project__image" key={images?.[0]} src={images?.[0]} alt="images of project" />
             <div className="project__content">
@@ -25,7 +26,7 @@ const Project: React.FC<ProjectProps> = ({ id, title, subtitle, description, ima
                 
                 <a className="project__link">More <img src={right_arrow} /></a>
             </div>
-        </div>
+        </article>
     );
 };
 
