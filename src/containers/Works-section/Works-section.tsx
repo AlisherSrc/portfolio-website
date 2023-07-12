@@ -1,9 +1,7 @@
-import React, { CSSProperties, useEffect, useState } from "react";
+import React, { useState } from "react";
 import './works-section.scss'
-// import projects from "../../data/projects";
 import Project, { ProjectProps } from "../../components/project/Project";
 import useFirestore from "../../hooks/useFirestore";
-// import projects from "../../data/projects";
 
 
 
@@ -19,8 +17,7 @@ const WorksSection = () => {
     const handleMouseMovement = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
         const target = e.currentTarget as HTMLElement;
         const boxElements = target.querySelectorAll(".box");
-        // ISSUE: It changes only the element I hover upon and don't change other elements. So if I 
-        // don't hover upon any element it will not change any of them
+
         const boxElement = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement;
 
         if (boxElement && boxElement.classList.contains("box")) {
@@ -44,8 +41,7 @@ const WorksSection = () => {
             })
         }
     }
-// TO DO: Connect with Firebase in order to fetch projects from it, so I can easily add and edit my projects without modifing my code
-// https://www.youtube.com/watch?v=jCY6DH8F4oc
+
     return (
         (!loading) ?
         <section className="works-section" onMouseMove={handleMouseMovement}>

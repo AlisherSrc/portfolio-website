@@ -1,7 +1,6 @@
 import { collection, getDocs } from "firebase/firestore";
-import { FC, ReactFragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { db } from "../config/firebase";
-import { ProjectProps } from "../components/project/Project";
 
 
 const useFirestore = <T>(collectionName : string) => {
@@ -22,7 +21,6 @@ const useFirestore = <T>(collectionName : string) => {
 
                 setCollectionList(filteredData);
                 setLoading(false);
-                console.log(filteredData);
             }catch(err){
                 console.log(err);
             }

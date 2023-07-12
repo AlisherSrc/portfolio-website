@@ -18,11 +18,10 @@ const FooterSection = () => {
         if(formRef.current){
             emailjs.sendForm('service_zjwel1e','template_as12w9i',formRef.current,'DHlm68mwpqcJ6QzMx')
             .then((res) => {
-                console.log(formRef.current);
                 setSuccess(true);
                 formRef.current?.reset();
             },(error) => {
-                console.error(error.text);
+                console.log(error.text);
             });
         };
     }
