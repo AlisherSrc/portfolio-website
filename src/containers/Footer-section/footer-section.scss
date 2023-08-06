@@ -9,6 +9,11 @@ section.footer-section {
   background-color: var(--dark-blue);
   flex-flow: column;
   color: var(--white);
+
+
+  label{
+    display: block;
+  }
 }
 
 .footer__top {

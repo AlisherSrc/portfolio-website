@@ -33,17 +33,17 @@ const FooterSection = () => {
                     <form ref={formRef} onSubmit={handleSubmit} >
                         <div className="form__userinfo">
                             <div>
-                                <p>NAME:</p>
+                                <label htmlFor="name">NAME:</label>
                                 <input type="text" name="name" className="form__name" />
                             </div>
                             <div>
-                                <p>EMAIL:</p>
+                                <label htmlFor="email">EMAIL:</label>
                                 <input type="email" name="email" className="form__email" />
                             </div>
                         </div>
 
                         <div className="form__message__container">
-                            <p>MESSAGE:</p>
+                            <label htmlFor="message">MESSAGE:</label>
                             <textarea  name="message" rows={15} cols={75} className="form__message" />
                         </div>
 
@@ -61,10 +61,10 @@ const FooterSection = () => {
             <div className="footer__bottom">
                 <ul>
                     <li>
-                        <a href="https://www.instagram.com/a_akito_o/" target="blank"><img src={instagram_icom} /></a>
+                        <a href="https://www.instagram.com/a_akito_o/" target="blank"><img src={instagram_icom} alt="instagram" title="instagram icon"/></a>
                     </li>
                     <li>
-                        <a href="https://twitter.com/alishror?s=21&t=lv-SYWat5HQHm75cuHNWGg" target="blank"><img src={twitter_icon} /></a>
+                        <a href="https://twitter.com/alishror?s=21&t=lv-SYWat5HQHm75cuHNWGg" target="blank"><img src={twitter_icon} alt="twitter" title="twitter icon"/></a>
                     </li>
                 </ul>
             </div>
