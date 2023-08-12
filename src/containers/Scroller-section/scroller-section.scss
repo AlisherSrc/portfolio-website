@@ -10,5 +10,28 @@
     text-align: center;
     margin-bottom: 20px;
   }
+}
 
+/* desktop devices */
+@media (min-width: 1281px) {
+}
+
+/* tablet devices */
+@media (min-width: 769px) {
+}
+
+/* mobile devices */
+@media (max-width: 768px) {
+  .scroller-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    // height: 100vh;
+
+    h2 {
+      font-size: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  }
 }

@@ -9,9 +9,8 @@
   padding: 20px;
 
   border-radius: 10px;
-  
-  position: relative;
 
+  position: relative;
 
   .project__image {
     position: relative;
@@ -37,14 +36,31 @@
       align-items: center;
       justify-content: space-between;
       font-weight: 500;
-  
+
       cursor: pointer;
     }
     .project__link:hover {
       animation: brightIn 1s ease 0s 1 normal forwards;
     }
-    .project__link:not(:hover){
+    .project__link:not(:hover) {
       animation: brightOut 1s ease 0s 1 normal forwards;
+    }
+  }
+}
+
+/* desktop devices */
+@media (min-width: 1281px) {
+}
+
+/* tablet devices */
+@media (min-width: 769px) {
+}
+
+/* mobile devices */
+@media (max-width: 768px) {
+  .project__container{
+    .project__image{
+      width: 100%;
     }
   }
 }
@@ -52,19 +68,19 @@
 // animations
 
 @keyframes brightIn {
-  0%{
+  0% {
     filter: brightness(1);
   }
-  100%{
+  100% {
     filter: brightness(1.1);
   }
 }
 
 @keyframes brightOut {
-  0%{
+  0% {
     filter: brightness(1.1);
   }
-  100%{
+  100% {
     filter: brightness(1);
   }
 }

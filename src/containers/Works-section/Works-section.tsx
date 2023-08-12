@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import './works-section.scss'
 import Project, { ProjectProps } from "../../components/project/Project";
 import useFirestore from "../../hooks/useFirestore";
-
-
+import arrow_up from "../../assets/arrow_up.svg";
+import arrow_down from "../../assets/arrow_down.svg";
 
 const WorksSection = () => {
     const [workNum, setWorkNum] = useState(0);
@@ -91,6 +91,9 @@ const WorksSection = () => {
                 </div>
 
                 <div className="column column-second">
+                    <div className="arrow--mobile">
+                        <img src={arrow_up} alt="arrow up icon" onClick={() => { setWorkNumValidate(workNum - 1) }}/>
+                    </div>
                     <a href={projects[workNum].link} target="blank">
                         <div className={`project-cards box ${projectBoxAnim}`}
                         >
@@ -104,6 +107,9 @@ const WorksSection = () => {
                             </div>
                         </div>
                     </a>
+                    <div className="arrow--mobile">
+                        <img src={arrow_down} alt="arrow down icon" onClick={() => { setWorkNumValidate(workNum + 1) }} />
+                    </div>
                 </div>
 
             </section>

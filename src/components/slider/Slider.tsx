@@ -28,7 +28,8 @@ const Slider: React.FC<Props> = ({ slides }) => {
                     <div className={(sliderImageI === slideI) ? "slide_active" : "slide_inactive"}>
                         <div className="slide__content" onMouseEnter={() => activateSlide(slideI)}>
                             <p className="title">{slide.title}</p>
-                            {(sliderImageI === slideI) && <p className="description">{slide.description}</p>}
+                            {(sliderImageI === slideI) && <p className="description description--desktop">{slide.description}</p>}
+                            <p className="description description--mobile">{slide.description}</p>
                         </div>
                     </div>
                 ))}

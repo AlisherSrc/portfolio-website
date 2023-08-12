@@ -1,10 +1,13 @@
 import './navbar.scss'
 
 const Navbar = () => {
+
+
     return (
         <div className="navbar">
             <div className="navbar-icon">
-                <a>AlisherSk</a>
+                <a className="logo--desktop">AlisherSk</a>
+                <a className="logo--mobile">Sk</a>
             </div>
         </div>
     )
