@@ -25,7 +25,7 @@ const Slider: React.FC<Props> = ({ slides }) => {
         <div className="slider__container">
             <div className="slider">
                 {slides.map((slide, slideI) => (
-                    <div className={(sliderImageI === slideI) ? "slide_active" : "slide_inactive"}>
+                    <div className={(sliderImageI === slideI) ? "slide_active" : "slide_inactive"} key={slideI}>
                         <div className="slide__content" onMouseEnter={() => activateSlide(slideI)}>
                             <p className="title">{slide.title}</p>
                             {(sliderImageI === slideI) && <p className="description description--desktop">{slide.description}</p>}

@@ -114,7 +114,7 @@ const WorksSection = () => {
 
             </section>
             :
-            <section>
+            <section className="works-section">
                 <p>Loading...</p>
             </section>
     )
